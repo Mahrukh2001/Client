@@ -1,0 +1,76 @@
+.visitor-details-container {
+  background: linear-gradient(135deg, #dad4e3 0%, #8ec5fc 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  
+  .visitor-header {
+    background-color: #343a40;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .visitor-card-body {
+    background-color: #ffffff;
+    padding: 2rem;
+  }
+  
+  
+  .visitor-avatar {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #dad4e3;
+    object-fit: cover;
+  }
+  
+  .visitor-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+  
+  .visitor-image-section {
+    text-align: center;
+  }
+  
+  .list-group-item {
+    font-size: 1.1rem;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    background-color: #f8f9fa;
+    margin-bottom: 5px;
+  }
+  
+  .list-group-item strong {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .visitor-details-container .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  
+  @media (max-width: 576px) {
+    .visitor-avatar {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  

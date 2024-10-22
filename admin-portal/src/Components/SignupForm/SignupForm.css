@@ -1,0 +1,106 @@
+/* SignupForm.css & LoginForm.css */
+.signup-container, .login-container {
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.8); /* Increased opacity for better readability */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effects */
+}
+
+.signup-container:hover, .login-container:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.signup-title, .login-title {
+    color: #2874A6;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center; /* Center-align the title */
+    font-weight: bold; /* Bold title for emphasis */
+    letter-spacing: 1px; /* Slight letter spacing for modern look */
+}
+
+form .form-control {
+    border-radius: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9); /* Increased opacity for input fields */
+    border: 1px solid #ccc;
+    font-size: 16px; /* Slightly larger font */
+    transition: border-color 0.3s ease;
+}
+
+form .form-control:focus {
+    border-color: #2874A6; /* Highlight input field on focus */
+    box-shadow: none;
+}
+
+form .btn-block {
+    width: 100%;
+    background-color: #2874A6;
+    border: none;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    cursor: pointer; 
+}
+
+form .btn-block:hover {
+    background-color: #21618C;
+}
+
+/* Link styling */
+p a {
+    color: #2874A6; /* Primary color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    color: #21618C; /* Darker shade on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Make forms responsive */
+@media (max-width: 768px) {
+    .signup-container, .login-container {
+        padding: 20px;
+    }
+
+    form .form-control {
+        font-size: 14px;
+    }
+
+    form .btn-block {
+        font-size: 16px;
+    }
+
+    .signup-title, .login-title {
+        font-size: 24px; 
+    }
+}
+
+/* Small screens below 576px (e.g. mobile phones) */
+@media (max-width: 576px) {
+    .signup-container, .login-container {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    form .form-control {
+        padding: 12px;
+    }
+
+    form .btn-block {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .signup-title, .login-title {
+        font-size: 22px; 
+    }
+}
