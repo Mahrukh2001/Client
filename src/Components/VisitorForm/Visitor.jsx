@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import './Visitor.css';
+import styles from './Visitor.module.css';
 
 function JobApplicationForm() {
   const [formData, setFormData] = useState({
@@ -85,37 +85,36 @@ function JobApplicationForm() {
   
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center mb-4">Job Application Form</h2>
-      <Form onSubmit={handleSubmit}>
-        <Row>
-          <Col md={6}>
-            <Form.Group controlId="fullName">
-              <Form.Label>Full Name *</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter your full name" 
-                name="fullName" 
-                value={formData.fullName} 
-                onChange={handleChange} 
-                required 
-              />
-            </Form.Group>
-          </Col>
-
-          <Col md={6}>
-            <Form.Group controlId="fathersName">
-              <Form.Label>Father's Name</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter your father's name" 
-                name="fathersName" 
-                value={formData.fathersName} 
-                onChange={handleChange} 
-              />
-            </Form.Group>
-          </Col>
-        </Row>
+    <div className={`${styles.container} mt-5`}>
+    <h2 className={`${styles.header} text-center mb-4`}>Job Application Form</h2>
+    <Form onSubmit={handleSubmit}>
+      <Row>
+        <Col md={6}>
+          <Form.Group controlId="fullName">
+            <Form.Label>Full Name *</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your full name"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+        </Col>
+        <Col md={6}>
+          <Form.Group controlId="fathersName">
+            <Form.Label>Father's Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your father's name"
+              name="fathersName"
+              value={formData.fathersName}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Col>
+      </Row>
 
         <Row>
           <Col md={6}>
@@ -331,9 +330,9 @@ function JobApplicationForm() {
           />
         </Form.Group>
 
-        <div className="form-buttons"> 
-          <Button variant="primary" type="submit">Submit</Button>
-          <Button variant="secondary" type="button">Cancel</Button>
+        <div className={styles.formButtons}> 
+          <Button className={styles.submitButton} type="submit">Submit</Button>
+          <Button className={styles.cancelButton} type="button">Cancel</Button>
         </div>
       </Form>
 

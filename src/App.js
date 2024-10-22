@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
+import LoginForm from './Components/LoginForm/LoginForm';
+import JobApplicationForm from './Components/VisitorForm/Visitor'
 // Import Admin Components
 import VisitorsList from './Components/AdminPortal/VisitorsList/VisitorsList';
+import Admins from './Components/AdminPortal/AdminsList/Admins';
 import VisitorsDetails from './Components/AdminPortal/VisitorsDetails/VisitorsDetails';
 import EmployeesList from './Components/AdminPortal/EmployeesList/EmployeesList';
+
 
 
 function App() {
@@ -34,6 +38,7 @@ function App() {
             <nav className="nav flex-column">
               <Link className="nav-link active" to="/">Visitors</Link>
               <Link className="nav-link" to="/employees">Employees</Link>
+              <Link className="nav-link" to="/admins">Admins</Link>
             </nav>
           </div>
 
@@ -43,12 +48,17 @@ function App() {
               {/* Admin Portal Routes */}
               <Route path="/" element={<VisitorsList handleApprove={handleApprove} />} />
               <Route path="/employees" element={<EmployeesList employees={employees} />} />
+              <Route path="/admins" element={<Admins />} />
               <Route path="/visitor/:id" element={<VisitorsDetails />} />
+   
 
               {/* Employee Portal Routes */}
               {/* <Route path="/employee-portal" element={<EmployeePortal />} />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/visitor-form" element={<VisitorForm />} /> */}
+              <Route path='/login' element={<LoginForm/>}/>
+              <Route path='/JobApplicationForm' element={<JobApplicationForm/>}/>
+              
             </Routes>
           </div>
         </div>
