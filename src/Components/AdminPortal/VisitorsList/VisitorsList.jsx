@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'; 
 import { Link } from 'react-router-dom';
 import { Table, Button } from 'react-bootstrap';
-import './VisitorsList.css';
-import '../../App.css';
 
-const VisitorsList = ({ handleApprove }) => { // Accept handleApprove as a prop
-  const [visitors, setVisitors] = useState([]); // State to hold visitors data
+
+const VisitorsList = ({ handleApprove }) => {
+  const [visitors, setVisitors] = useState([]);
 
   useEffect(() => {
     const fetchVisitors = async () => {
@@ -15,26 +14,26 @@ const VisitorsList = ({ handleApprove }) => { // Accept handleApprove as a prop
           throw new Error('Failed to fetch visitors');
         }
         const data = await response.json();
-        setVisitors(data.map(visitor => ({ ...visitor, disabled: false }))); // Add a disabled property
+        setVisitors(data.map(visitor => ({ ...visitor, disabled: false })));
       } catch (error) {
         console.error('Error fetching visitors:', error);
       }
     };
 
     fetchVisitors();
-  }, []); // Empty dependency array to run only once when the component mounts
+  }, []);
 
   const handleApproval = (visitor) => {
-    handleApprove(visitor); // Call the handleApprove function passed down from App
-
-    // Remove the visitor from the visitors list
+    handleApprove(visitor);
     setVisitors(visitors.filter(v => v._id !== visitor._id));
   };
 
   return (
     <div className="container mt-5">
       <h2 className="mb-4">Visitors List</h2>
-      <div className="table-responsive">
+
+      {/* Table for larger screens */}
+      <div className="table-responsive d-none d-md-block">
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -70,6 +69,32 @@ const VisitorsList = ({ handleApprove }) => { // Accept handleApprove as a prop
             ))}
           </tbody>
         </Table>
+      </div>
+
+      {/* Cards for mobile devices */}
+      <div className="visitor-cards d-md-none">
+        {visitors.map((visitor) => (
+          <div key={visitor._id} className="visitor-card mb-3">
+            <h5>{visitor.fullName}</h5>
+            <p><strong>Position Applied For:</strong> {visitor.positionAppliedFor}</p>
+            <p><strong>Experience:</strong> {visitor.yearsOfExperience} years</p>
+            <p><strong>Contact:</strong> {visitor.mobileNo}</p>
+            <div className="visitor-actions">
+              <Link to={`/visitor/${visitor._id}`}>
+                <Button variant="primary" className="btn-view me-2 mb-2">
+                  View Details
+                </Button>
+              </Link>
+              <Button 
+                variant="success" 
+                className="mb-2" 
+                onClick={() => handleApproval(visitor)}
+              >
+                Approve as Employee
+              </Button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Card, ListGroup, ListGroupItem, Button, Container, Row, Col } from 'react-bootstrap';
 import moment from 'moment'; // Import moment
 import './VisitorsDetails.css'; // Custom CSS file
-import visitorImage from '../../images/icon.png'; // Adjust the path according to the file structure
+import visitorImage from '../../../images/icon.png'; // Adjust the path according to the file structure
 
 const VisitorDetails = () => {
   const { id } = useParams(); // Get the ID from the URL

@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
-import VisitorsList from './Components/VisitorsList/VisitorsList';
-import EmployeesList from './Components/EmployeesList/EmployeesList';
-import VisitorsDetails from './Components/VisitorsDetails/VisitorsDetails';
+
+// Import Admin Components
+import VisitorsList from './Components/AdminPortal/VisitorsList/VisitorsList';
+import VisitorsDetails from './Components/AdminPortal/VisitorsDetails/VisitorsDetails';
+import EmployeesList from './Components/AdminPortal/EmployeesList/EmployeesList';
+
+
 function App() {
-  const [employees, setEmployees] = useState([]); // Lift employees state to App
+  const [employees, setEmployees] = useState([]);
 
   const handleApprove = (visitor) => {
-    // Add visitor to the employees list
     setEmployees([...employees, visitor]);
   };
 
@@ -23,19 +26,29 @@ function App() {
             <input type="text" placeholder="Search..." className="search-bar" />
           </div>
         </header>
+
+        {/* Dashboard and Content */}
         <div className="dashboard">
+          {/* Sidebar */}
           <div className="sidebar">
             <nav className="nav flex-column">
-              <Link className="nav-link active" to="/">Visitors List</Link>
+              <Link className="nav-link active" to="/">Visitors</Link>
               <Link className="nav-link" to="/employees">Employees</Link>
             </nav>
           </div>
+
+          {/* Content */}
           <div className="content">
             <Routes>
-              {/* Pass handleApprove and employees to the respective components */}
+              {/* Admin Portal Routes */}
               <Route path="/" element={<VisitorsList handleApprove={handleApprove} />} />
               <Route path="/employees" element={<EmployeesList employees={employees} />} />
               <Route path="/visitor/:id" element={<VisitorsDetails />} />
+
+              {/* Employee Portal Routes */}
+              {/* <Route path="/employee-portal" element={<EmployeePortal />} />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/visitor-form" element={<VisitorForm />} /> */}
             </Routes>
           </div>
         </div>
