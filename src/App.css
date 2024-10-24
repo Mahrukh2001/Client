@@ -22,6 +22,14 @@ body {
     flex-wrap: wrap;
 }
 
+.full-screen-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
 .admin-title {
     font-size: 28px;
     font-weight: bold;
@@ -126,6 +134,16 @@ body {
     font-size: 14px;
     word-wrap: break-word; 
 }
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
 
 
 @media (max-width: 768px) {

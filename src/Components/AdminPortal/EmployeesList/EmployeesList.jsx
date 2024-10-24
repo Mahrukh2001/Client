@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const EmployeesList = ({ employees, onDisable, onUpdate }) => {
   return (
     <div className="container mt-5">
-      <h2 className="mb-4">Employee List</h2>
+      <h2 className="mb-4">Employees List</h2>
       <div className="table-responsive">
         <Table striped bordered hover>
           <thead>

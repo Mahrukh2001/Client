@@ -1,38 +1,38 @@
 /* SignupForm.css & LoginForm.css */
 .signup-container, .login-container {
     margin-top: 50px;
-    background: rgba(255, 255, 255, 0.8); /* Increased opacity for better readability */
+    background: rgba(255, 255, 255, 0.8); 
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .signup-container:hover, .login-container:hover {
-    transform: translateY(-10px); /* Slight lift on hover */
-    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: translateY(-10px); 
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2); 
 }
 
 .signup-title, .login-title {
     color: #2874A6;
     font-size: 28px;
     margin-bottom: 30px;
-    text-align: center; /* Center-align the title */
-    font-weight: bold; /* Bold title for emphasis */
-    letter-spacing: 1px; /* Slight letter spacing for modern look */
+    text-align: center; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
 }
 
 form .form-control {
     border-radius: 30px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.9); /* Increased opacity for input fields */
+    background: rgba(255, 255, 255, 0.9); 
     border: 1px solid #ccc;
-    font-size: 16px; /* Slightly larger font */
+    font-size: 16px; 
     transition: border-color 0.3s ease;
 }
 
 form .form-control:focus {
-    border-color: #2874A6; /* Highlight input field on focus */
+    border-color: #2874A6; 
     box-shadow: none;
 }
 
@@ -55,13 +55,13 @@ form .btn-block:hover {
 
 /* Link styling */
 p a {
-    color: #2874A6; /* Primary color */
+    color: #2874A6; 
     text-decoration: none;
     font-weight: bold;
 }
 
 p a:hover {
-    color: #21618C; /* Darker shade on hover */
+    color: #21618C; 
     text-decoration: underline; /* Add underline on hover */
 }
 
